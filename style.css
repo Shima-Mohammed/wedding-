@@ -1,0 +1,462 @@
+/****************************variables**************************/
+/****************************Each********************/
+.cover1 {
+  background-image: url(images/cover1.jpg); }
+
+.cover2 {
+  background-image: url(images/cover2.jpg); }
+
+.cover3 {
+  background-image: url(images/cover3.jpg); }
+
+.cover3 {
+  background-image: url(images/cover3.jpg); }
+
+.cover4 {
+  background-image: url(images/cover4.jpg); }
+
+/***********************mixin************************/
+/********************placeholder selector****************/
+.get, .story, .party, .photo, .contact {
+  min-height: 500px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px; }
+
+.start, .time {
+  -webkit-background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: fixed; }
+
+.get p, .party p, .photo p, .contact p {
+  font-family: "Clicker Script", cursive;
+  font-size: 25px;
+  padding-left: 350px;
+  padding-right: 350px;
+  margin-bottom: 50px; }
+  @media screen and (max-width: 1000px) {
+    .get p, .party p, .photo p, .contact p {
+      font-size: 23px;
+      padding-left: 0px;
+      padding-right: 0px; } }
+
+.start .overlay, .time .overlay {
+  padding-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.get img, .story img, .party img, .party .card img, .photo img {
+  max-width: 100%;
+  margin-bottom: 20px; }
+
+/***********************for**************************/
+.con-data-1:before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  border-color: transparent #f4f3e2 transparent white;
+  border-width: 15px 15px 15px 0px;
+  border-style: solid;
+  width: 20px;
+  height: 20px; }
+.con-data-1:after {
+  content: "";
+  position: absolute;
+  top: 78px;
+  left: -15px;
+  background-color: #f4f3e2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 10px; }
+
+.con-data-2 {
+  margin-left: -600px; }
+  @media screen and (max-width: 1300px) {
+    .con-data-2 {
+      margin-left: -510px; } }
+  @media screen and (max-width: 1000px) {
+    .con-data-2 {
+      margin-left: 0px; }
+      .con-data-2:before {
+        content: "";
+        position: absolute;
+        top: 350px;
+        left: 30px;
+        border-color: transparent #f4f3e2 transparent white;
+        border-width: 15px 15px 15px 0px;
+        border-style: solid;
+        width: 20px;
+        height: 20px; } }
+  @media screen and (min-width: 1300px) {
+    .con-data-2:before {
+      content: "";
+      position: absolute;
+      top: 380px;
+      left: -47px;
+      border-color: transparent white transparent #f4f3e2;
+      border-width: 15px 15px 15px 15px;
+      border-style: solid;
+      width: 20px;
+      height: 20px; } }
+  .con-data-2:after {
+    content: "";
+    position: absolute;
+    top: 380px;
+    left: -15px;
+    background-color: #f4f3e2;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 10px; }
+
+/****************************body********************/
+body {
+  position: relative; }
+
+/*********************************start************************/
+.start {
+  min-height: 610px; }
+  .start .overlay {
+    min-height: 660px; }
+    .start .overlay div {
+      color: white;
+      padding-top: 80px;
+      text-align: center !important; }
+      .start .overlay div h3 {
+        padding-top: 160px;
+        color: #fff;
+        font-size: 80px;
+        font-family: "Clicker Script", cursive;
+        margin-bottom: 30px; }
+        @media screen and (max-width: 700px) {
+          .start .overlay div h3 {
+            font-size: 50px; } }
+      .start .overlay div h5 {
+        color: #fff;
+        letter-spacing: 15px; }
+      .start .overlay div a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s ease-in;
+        padding-right: 20px; }
+      .start .overlay div .fas {
+        margin-top: 150px;
+        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        border: 1px solid #FF847C;
+        line-height: 50px;
+        animation-name: hello;
+        webkit-animation-duration: 4s;
+        animation-duration: 4s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        cursor: pointer;
+        position: absolute;
+        top: 180x; }
+
+/************************************animation**************************************/
+@keyframes hello {
+  0% {
+    top: 340px; }
+  25% {
+    top: 370px; }
+  50% {
+    top: 350px; }
+  75% {
+    top: 380px; }
+  100% {
+    top: 340px; } }
+/***************************navbar*******************/
+.navbar {
+  background-color: white; }
+  .navbar .navbar-toggler {
+    padding: 15px;
+    border-color: transparent;
+    margin-bottom: 10px;
+    border-radius: 15px; }
+  .navbar .navbar-toggler {
+    color: #FF847C;
+    position: relative; }
+    .navbar .navbar-toggler .fas {
+      font-size: 30px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      -webkit-animation-name: example;
+      animation-name: example;
+      -webkit-animation-duration: 4s;
+      animation-duration: 4s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; }
+  .navbar .navbar-brand {
+    color: #FF847C;
+    font-family: "Clicker Script", cursive;
+    font-size: 35px;
+    margin-bottom: 10px; }
+  .navbar .navbar-collapse {
+    border-top: 2px dashed #ccc; }
+    .navbar .navbar-collapse li:first-child {
+      margin-top: 50px; }
+    .navbar .navbar-collapse li {
+      margin-bottom: 20px;
+      font-weight: 600; }
+      .navbar .navbar-collapse li .nav-link {
+        color: #7f7f7f; }
+        .navbar .navbar-collapse li .nav-link:hover {
+          color: #FF847C; }
+      .navbar .navbar-collapse li .active {
+        color: #FF847C !important; }
+
+@keyframes example {
+  0% {
+    top: 0px; }
+  25% {
+    top: -20px; }
+  50% {
+    top: 20px; }
+  100% {
+    top: 0px; } }
+/********************************************get****************************/
+.get {
+  background-color: white; }
+  .get h4 {
+    color: #FF847C;
+    font-size: 80px;
+    font-family: "Clicker Script", cursive;
+    margin-bottom: 30px; }
+    @media screen and (max-width: 700px) {
+      .get h4 {
+        font-size: 50px; } }
+  .get h5 {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 50px; }
+  .get .col-md img {
+    max-width: 70%;
+    margin-right: 0px; }
+  .get .col-md h6 {
+    font-family: "Clicker Script", cursive;
+    color: #FF847C;
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-left: 0px; }
+  .get .col-md span {
+    color: #FF847C;
+    border: 1px solid rgba(255, 132, 124, 0.3);
+    padding-left: 0px;
+    padding: 1px 5px;
+    letter-spacing: 5px;
+    margin-left: 0px; }
+
+/******************************time********************/
+.time {
+  min-height: 600px;
+  margin-top: 75px;
+  margin-bottom: 75px; }
+  .time .overlay {
+    min-height: 650px; }
+    .time .overlay .fas {
+      color: #fff;
+      font-size: 100px;
+      padding-top: 140px;
+      padding-bottom: 30px; }
+    .time .overlay h3 {
+      color: #FF847C;
+      font-size: 80px;
+      font-family: "Clicker Script", cursive;
+      margin-bottom: 30px; }
+      @media screen and (max-width: 700px) {
+        .time .overlay h3 {
+          font-size: 50px; } }
+    .time .overlay h5 {
+      color: #7f7f7f;
+      letter-spacing: 5px;
+      margin-bottom: 50px; }
+    .time .overlay .col {
+      margin-top: 50px; }
+      .time .overlay .col h5 {
+        color: #fff;
+        font-family: "Clicker Script", cursive;
+        font-size: 60px;
+        margin-bottom: 20px; }
+      .time .overlay .col h6 {
+        letter-spacing: 5px;
+        color: #fff;
+        font-family: "Clicker Script", cursive;
+        font-size: 20px;
+        margin-bottom: 30px; }
+
+/**************************************story***************************/
+.story {
+  background-color: #fff; }
+  .story h4 {
+    color: #FF847C;
+    font-size: 80px;
+    font-family: "Clicker Script", cursive;
+    margin-bottom: 30px; }
+    @media screen and (max-width: 700px) {
+      .story h4 {
+        font-size: 50px; } }
+  .story .con-story {
+    border-left: 2px dashed #FF847C;
+    min-height: 500px;
+    padding-left: 50px;
+    padding-bottom: 0px;
+    position: relative; }
+    .story .con-story .con-data {
+      width: 100%;
+      background-color: #f4f3e2;
+      padding: 30px;
+      margin-bottom: 50px; }
+      .story .con-story .con-data h5 {
+        color: #FF847C;
+        font-size: 36px;
+        font-family: "Clicker Script", cursive; }
+      .story .con-story .con-data h6 {
+        letter-spacing: 5px;
+        font-size: 12px;
+        color: #bbb;
+        margin-bottom: 20px; }
+      .story .con-story .con-data p {
+        font-size: 14px;
+        word-spacing: 2px;
+        color: #7f7f7f;
+        font-weight: 600; }
+
+/********************************************test*********************************/
+.party {
+  background-color: white; }
+  .party h4 {
+    color: #FF847C;
+    font-size: 80px;
+    font-family: "Clicker Script", cursive;
+    margin-bottom: 30px; }
+    @media screen and (max-width: 700px) {
+      .party h4 {
+        font-size: 50px; } }
+  .party .card {
+    border: none;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-right: 20px; }
+    .party .card img {
+       }
+    .party .card .card-block {
+      background-color: white;
+      padding: 10px;
+      padding-top: 0px;
+      margin-top: 0px;
+      border: 1px solid #f4f3e2;
+      border-top: none; }
+      .party .card .card-block .con-data {
+        padding-top: 30px;
+        padding: 30px;
+        padding-bottom: 40px;
+        background-color: #f4f3e2; }
+        .party .card .card-block .con-data h5 {
+          color: #FF847C;
+          font-family: "Clicker Script", cursive;
+          font-size: 40px;
+          margin-top: 30px;
+          margin-bottom: 20px; }
+        .party .card .card-block .con-data .fas, .party .card .card-block .con-data .far {
+          color: #7f7f7f;
+          margin-bottom: 10px;
+          opacity: 0.6; }
+        .party .card .card-block .con-data .fab {
+          color: #FF847C;
+          font-size: 36px;
+          margin-top: 15px;
+          margin-bottom: 15px; }
+        .party .card .card-block .con-data h6 {
+          color: #7f7f7f;
+          opacity: 0.6;
+          letter-spacing: 2px;
+          font-size: 14px; }
+        .party .card .card-block .con-data span {
+          color: #7f7f7f;
+          font-size: 16px;
+          font-weight: 600;
+          padding-left: 10px;
+          padding-right: 10px; }
+
+/********************************************photo*********************************/
+.photo {
+  background-color: #fff; }
+  .photo h4 {
+    color: #FF847C;
+    font-size: 80px;
+    font-family: "Clicker Script", cursive;
+    margin-bottom: 30px; }
+    @media screen and (max-width: 700px) {
+      .photo h4 {
+        font-size: 50px; } }
+  .photo li {
+    margin-bottom: 20px;
+    border: 3px solid #FF847C;
+    padding-bottom: 0px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    color: #FF847C;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    .photo li:hover {
+      background-color: #FF847C;
+      color: white; }
+  .photo .active {
+    background-color: #FF847C;
+    color: white; }
+  .photo .shuffle {
+    margin-bottom: -20px; }
+    .photo .shuffle .col-sm {
+      padding: 0px;
+      transition: all 0.3s ease-in-out; }
+      @media screen and (max-width: 600px) {
+        .photo .shuffle .col-sm {
+          margin-bottom: -20px; } }
+    .photo .shuffle img {
+      width: 100%;
+      height: 300px; }
+
+/********************************************scroll-top*****************************/
+.contact {
+  background-color: #f4f4f4;
+  margin-bottom: 0px; }
+  .contact h4 {
+    color: #FF847C;
+    font-size: 80px;
+    font-family: "Clicker Script", cursive;
+    margin-bottom: 30px;
+    margin-top: 20px; }
+    @media screen and (max-width: 700px) {
+      .contact h4 {
+        font-size: 50px; } }
+  .contact p {
+    margin-bottom: 20px; }
+  .contact form {
+    margin-top: 50px;
+    margin-left: 50px; }
+    @media screen and (max-width: 1000px) {
+      .contact form {
+        margin-left: 0px; } }
+    .contact form input {
+      margin-bottom: 20px;
+      border: none;
+      background-color: transparent;
+      border: 1px solid #FF847C;
+      color: #FF847C; }
+    .contact form .btn {
+      background-color: #FF847C;
+      color: white; }
+
+/*# sourceMappingURL=style.css.map */

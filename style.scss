@@ -1,0 +1,756 @@
+
+
+
+
+/****************************variables**************************/
+$mainColor:#FF847C ; 
+$h4Color:#fff ; 
+$h5Color:#aaa ;
+$pColor:#7f7f7f ; 
+$mainFont: 'Clicker Script', cursive;
+$h3FontSize:80px ;
+$h4FontSize:60px ;
+$storyBack:#f4f3e2 ;
+$coverImg : cover1 cover2 cover3 cover3 cover4  ;
+$testImg : cover3 cover4 ; 
+$secHeight: 500px ;
+$top:180x ;
+
+/****************************Each********************/
+@each $img in  $coverImg
+{
+    .#{$img}
+    {
+        background-image: url(images/#{$img}.jpg);
+    }
+}
+/***********************mixin************************/
+@mixin lSpace($space){
+    
+    letter-spacing: ($space);
+}
+
+@mixin h4Style($color){
+    
+    color:$color ;
+     font-size: $h4FontSize  +20px  ;
+    font-family: $mainFont ;
+    margin-bottom: 30px ;
+    @media screen and (max-width: 700px)
+    {
+        font-size: $h4FontSize - 10px  ; 
+    }
+    
+   
+    
+}
+/********************placeholder selector****************/
+%section
+{
+    min-height: $secHeight ; 
+    padding-bottom: 50px ; 
+    margin-bottom: 50px ; 
+    padding-top: 50px ;
+}
+%backSize
+{
+    
+    -webkit-background-repeat: no-repeat ;
+    background-repeat: no-repeat ;
+    background-size: cover ; 
+    -webkit-background-size: cover ; 
+    background-attachment: fixed ;
+}
+
+%pStyle
+{
+        font-family: $mainFont ; 
+        font-size: 25px ;
+        padding-left: 350px ;
+        padding-right:350px ;
+        margin-bottom: 50px ;
+        @media screen and (max-width: 1000px)
+        {
+            font-size: 23px ;
+            padding-left: 0px ; 
+            padding-right: 0px ; 
+        }
+   
+}
+%overlay
+{
+        
+        padding-bottom: 50px ; 
+        background-color: rgba(0,0,0,0.5);
+}
+
+%img 
+{
+    max-width: 100% ; 
+    margin-bottom: 20px ;
+}
+/***********************for**************************/
+@for $x from 1 through 2
+{
+    @if $x == 1  
+    {
+        .con-data-#{$x}{
+        
+         &:before 
+        {
+            content: "" ;
+            position: absolute ; 
+            top:80px  ; 
+            left:30px ;
+            border-color: transparent $storyBack transparent white ;
+            border-width: 15px 15px 15px 0px ; 
+            border-style: solid ;
+            width: 20px ; 
+            height: 20px ;  
+        }
+        &:after
+            {
+                content: "" ; 
+                position: absolute ; 
+                top:78px ; 
+                left:-15px ;
+                background-color: $storyBack ; 
+                width: 30px ; 
+                height: 30px ; 
+                border-radius: 50% ;
+                border:2px solid white ;
+                padding: 10px ;
+                
+            }
+        
+    }
+    }
+    @elseif $x  == 2  
+    {
+        
+         .con-data-#{$x}{
+             
+             margin-left: -600px ;
+             @media screen and (max-width: 1300px)
+             {
+                 margin-left: -510px;
+                 
+             }
+             @media screen and (max-width: 1000px)
+             {
+               margin-left: 0px ;
+                 
+        &:before 
+        {
+            content: "" ;
+            position: absolute ; 
+            top:80px + 135px * $x  ; 
+            left:30px ;
+            border-color: transparent $storyBack transparent white ;
+            border-width: 15px 15px 15px 0px ; 
+            border-style: solid ;
+            width: 20px ; 
+            height: 20px ;  
+        }
+                
+                 
+             }//media query 
+             
+         @media screen and (min-width: 1300px)
+         {
+               &:before 
+        {
+            content: "" ;
+            position: absolute ; 
+            top:80px + 150px * $x   ; 
+            left:-47px ;
+            border-color: transparent white  transparent $storyBack ;
+            border-width: 15px 15px 15px 15px ; 
+            border-style: solid ;
+            width: 20px ; 
+            height: 20px ;  
+        }
+             
+             
+             
+             }
+       
+             
+         &:after
+            {
+                content: "" ; 
+                position: absolute ; 
+                top:80px + 150px * $x ; 
+                left:-15px ;
+                background-color: $storyBack ; 
+                width: 30px ; 
+                height: 30px ; 
+                border-radius: 50% ;
+                border:2px solid white ;
+                padding: 10px ;
+                
+            }         
+        
+    }
+    }
+    
+    
+    
+    
+    
+ 
+    
+}
+/****************************body********************/
+body
+{
+   position: relative;
+}
+/*********************************start************************/
+.start
+{
+    @extend %backSize ;
+    min-height: $secHeight+110  ;
+    
+    
+    .overlay
+    {
+        min-height: $secHeight +160px; 
+        @extend %overlay ;
+        
+        div 
+        {
+            color:white ;
+            padding-top: 80px ;
+            text-align: center !important ;
+            
+            h3
+            {
+                padding-top: 160px ;
+                 @include h4Style(#fff);
+            }
+            h5
+            {
+                color:#fff ; 
+                @include lSpace(15px);
+                
+            }
+            
+            a{
+                color:white ; 
+                text-decoration: none ;
+                transition: all 0.2s ease-in ;
+                padding-right: 20px ;
+            }
+            .fas
+            {
+                margin-top: 150px ;
+                font-size: 30px ;
+                width: 50px ; 
+                height: 50px ; 
+                border-radius: 15px  ; 
+                border:1px solid $mainColor ;
+                line-height: 50px ;
+                animation-name: hello ;
+                webkit-animation-duration: 4s;
+                animation-duration: 4s;
+                -webkit-animation-iteration-count:infinite ;
+                animation-iteration-count:infinite ;
+                cursor: pointer ;
+                position: absolute ; 
+                top:$top;
+                
+        }
+            }
+        }
+    }
+
+
+/************************************animation**************************************/
+@keyframes  hello{
+    
+    0%
+    {
+        top:340px ; 
+    }
+    25%
+    {
+        top:370px ; 
+    }
+    50%
+    {
+        top:350px ; 
+    }
+    75%
+    {
+        top:380px ; 
+    }
+    100%
+    {
+        top:340px ;
+    }
+    
+}
+/***************************navbar*******************/
+.navbar
+{
+    background-color: white  ;
+    
+    
+    
+    .container
+    {
+        
+    }
+    .navbar-toggler
+    {
+      padding: 15px;
+      border-color: transparent;
+      margin-bottom: 10px ;
+      border-radius: 15px ;    
+    }
+    .navbar-toggler
+    {
+        color:$mainColor ;
+        position: relative ; 
+        
+        .fas
+        {
+        font-size: 30px;    
+        position: absolute ; 
+        top:0px ; 
+        left:0px ;
+        -webkit-animation-name: example ;
+        animation-name: example ;
+        -webkit-animation-duration: 4s;
+        animation-duration: 4s;
+        -webkit-animation-iteration-count:infinite ;
+        animation-iteration-count:infinite ;
+        }
+    }
+    .navbar-brand
+    {
+        color:$mainColor ;
+        font-family: $mainFont ;
+        font-size: 35px ;
+        margin-bottom: 10px ;
+    }
+    .navbar-collapse
+    {
+        border-top: 2px dashed #ccc;
+        
+        li:first-child
+        {
+            margin-top: 50px ; 
+            
+        }
+        li
+        {
+            margin-bottom: 20px ;
+            
+            font-weight: 600 ;
+            .nav-link
+            {
+              
+                color:$pColor ;
+                &:hover
+                {
+                    color:$mainColor ;
+                }
+            }
+            .active
+            {
+                color:$mainColor !important ;
+            }
+        }
+    }
+}
+
+@keyframes example{
+    
+    0%
+    {
+        top:0px ; 
+    }
+    25%
+    {
+        top:-20px ; 
+    }
+     50%
+    {
+        top:20px ; 
+    }
+    100%
+    {
+        top:0px ; 
+    }
+    
+}
+/********************************************get****************************/
+.get 
+{
+    @extend %section ; 
+    background-color: white ;
+    
+    
+    
+    img 
+    {
+        @extend %img ;
+    }
+    h4
+    {
+        @include h4Style($mainColor);
+        
+    }
+    p {
+        @extend %pStyle ;
+        
+    }
+    h5
+    {
+        color:$h5Color ; 
+        font-size: 14px ;
+        margin-bottom: 50px ;
+    }
+   .col-md 
+    {
+        img{
+            max-width: 70% ;
+            margin-right: 0px ;
+        }
+        
+        h6
+        {
+            font-family: $mainFont ;
+            color:$mainColor ;
+            font-size:36px ;
+            margin-bottom: 20px ;
+            margin-left: 0px ;
+        }
+        span{
+            color:$mainColor ; 
+            border: 1px solid rgba(255, 132, 124, 0.3);
+            padding-left:0px ; 
+            padding: 1px 5px ;
+            @include lSpace(5px);
+            margin-left: 0px ;
+            
+        }
+    }
+}
+/******************************time********************/
+.time
+{
+    @extend %backSize ;
+    min-height: $secHeight + 100px  ;
+    margin-top: 75px ;
+    margin-bottom: 75px ;
+    
+    .overlay 
+    {
+        min-height: $secHeight +150px ;  
+      @extend %overlay ;
+        
+        
+        .fas
+        {
+            color:$h4Color ; 
+            font-size:$h4FontSize +40px  ;
+            padding-top: 140px ;
+            padding-bottom: 30px ;
+        }
+        
+        h3
+        {
+             @include h4Style($mainColor);
+        }
+        h5
+        {
+            color:$pColor ;
+            @include lSpace(5px);
+            margin-bottom: 50px ;
+            
+        }
+        .col
+        {
+            margin-top: 50px ; 
+            
+            h5
+            {
+                color:$h4Color ; 
+                font-family: $mainFont ;
+                font-size: $h4FontSize ;
+                margin-bottom: 20px ;
+            }
+            h6
+            {
+                @include lSpace(5px);
+                color:$h4Color ;  
+                font-family: $mainFont ;
+                font-size: $h4FontSize - 40px ;
+                margin-bottom: 30px ;
+            }
+        }
+    }
+}
+
+
+/**************************************story***************************/
+.story
+{
+    @extend %section ;
+    background-color: $h4Color ;
+    
+    
+    img {
+       @extend %img ;
+    }
+    h4
+    {
+         @include h4Style($mainColor);
+    }
+    .con-story 
+    {
+        border-left:2px dashed $mainColor  ;
+        min-height: 500px;
+        padding-left: 50px ;
+        padding-bottom: 0px ;
+        position: relative ; 
+        
+        .con-data
+        
+        {
+            width: 100% ; 
+            background-color:$storyBack ;
+            padding: 30px ;
+            margin-bottom: 50px ;
+            
+            
+
+            
+            h5
+            {
+                color:$mainColor ; 
+                font-size: 36px ;
+                font-family: $mainFont ;
+            }
+            h6
+            {
+                @include lSpace(5px );
+                font-size: 12px ;
+                color:#bbb ;
+                margin-bottom: 20px ;
+            }
+            p{
+                font-size: 14px ;
+                word-spacing: 2px ; 
+                color:$pColor ;
+                font-weight: 600 ;
+            }
+            
+            
+        }
+       
+        
+    }
+}
+/********************************************test*********************************/
+.party
+{
+   @extend %section ;
+    background-color: white ;
+    
+    
+    
+    img{
+        @extend %img ;
+        
+    }
+    h4
+    {
+        @include h4Style($mainColor);
+    }
+    p{
+       @extend %pStyle ;
+    }
+    .card
+    {
+        border:none ;
+        padding: 10px ;
+        padding-top: 0px;
+        margin-top: 0px ;
+        margin-bottom: 30px ;
+        margin-right: 20px ;
+       
+        
+        img{
+        @extend %img ;
+        box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+        }
+        
+        .card-block
+        {
+            background-color:white  ;
+            padding: 10px ;
+            padding-top: 0px;
+            margin-top: 0px ;
+            border:1px solid #f4f3e2 ;
+            border-top:none ;
+            
+            .con-data
+            {
+                padding-top: 30px ;
+                padding: 30px ;
+                padding-bottom: 40px ;
+                background-color:#f4f3e2  ;
+                 
+                
+                h5
+                {
+                    color:$mainColor;
+                    font-family: $mainFont ;
+                    font-size: 40px ;
+                    margin-top: 30px ;
+                    margin-bottom: 20px ;
+                }
+                .fas , .far
+                {
+                    color:$pColor  ;
+                    margin-bottom: 10px ;
+                    opacity: 0.6 ;
+                }
+                .fab
+                {
+                    color: $mainColor ;
+                    font-size: 36px ;
+                    margin-top: 15px ;
+                    margin-bottom: 15px ;
+                }
+                h6
+                {
+                    color:$pColor  ;
+                    opacity: 0.6 ;
+                    @include lSpace(2px);
+                    font-size: 14px ;
+                    
+                }
+                span{
+                    color:$pColor ; 
+                    font-size: 16px ;
+                    font-weight: 600 ;
+                    padding-left: 10px ;
+                    padding-right: 10px ;
+                    
+                }
+            }
+            
+        }
+    }
+}
+/********************************************photo*********************************/
+.photo 
+{
+    background-color:#fff ;
+   @extend %section ;
+    img{
+        @extend %img ; 
+    }
+    h4
+    {
+         @include h4Style($mainColor);
+    }
+    p {
+      
+       @extend %pStyle ;
+    }
+    li
+    {
+        margin-bottom: 20px ;
+        border:3px solid $mainColor ;
+        padding-bottom: 0px ;
+        margin-right: 10px ;
+        padding:10px 20px ;
+        color:$mainColor ;
+        font-weight: 600 ;
+        cursor: pointer ;
+        transition: all 0.3s ease-in-out ;
+        &:hover
+        {
+             background-color: $mainColor ; 
+            color:white ;
+        }
+        
+        
+        
+    }
+    .active 
+        {
+            background-color: $mainColor ; 
+            color:white ;
+        }
+    .shuffle
+    {
+        margin-bottom: -20px;
+        .col-sm
+        {
+            padding: 0px ;
+            transition: all 0.3s ease-in-out ;
+            @media screen and (max-width: 600px)
+            {
+                margin-bottom: -20px ;
+            }
+            
+        }
+       img{
+        width: 100% ; 
+        height: 300px ;
+           
+    } 
+    }
+
+
+    
+    
+}
+/********************************************scroll-top*****************************/
+.contact 
+{
+    @extend %section ;
+    background-color: #f4f4f4 ;
+    margin-bottom: 0px ;
+    
+    h4
+    {
+        @include  h4Style($mainColor ) ;
+        margin-top: 20px ;
+        
+    }
+    p {
+        @extend %pStyle ;
+        margin-bottom: 20px ;
+    }
+    form{
+        margin-top: 50px ;
+        margin-left: 50px ;
+        @media screen and (max-width: 1000px)
+        {
+          margin-left: 0px ;  
+        }
+        
+        input{
+            margin-bottom: 20px ;
+            border: none ;
+            background-color: transparent ;
+            border:1px solid $mainColor ;
+            color:$mainColor ;
+        }
+        .btn 
+        {
+            background-color: $mainColor; 
+            color:white ;
+        }
+    }
+    
+}
+
